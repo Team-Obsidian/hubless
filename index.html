@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="crt.css" rel="stylesheet" type="text/css" />
+  <link href="background-pattern.css" rel="stylesheet" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eruda@3.0.0/eruda.min.js"></script>
+  <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
+  <script>eruda.init();</script>
+</head>
+
+<body>
+
+<div id="borderContainer">
+  <div id="borderL"></div>
+  <div id="borderR"></div>
+<!--
+  <div id="borderT"></div>
+  <div id="borderB"></div>
+-->
+</div>
+  
+<div id="mgContent">
+  <form autocomplete="off">
+    <input type="text" onpaste="SiteRedirect()" id="userInput" 
+  onfocus="blureverything()" onfocusout="unblureverything()"/>
+  </form>
+
+  <div id="testimagecontainer">  <img id="testimage" class="dropblue" src="https://github.com/Team-Obsidian/website-2/blob/main/img/icon/forestbunny.gif?raw=true"/></div>
+  
+  <div id="buttonfield" class="dropblue">
+  <!--<button onclick="checkpassword()">Apply</button>-->
+
+  <a href="https://lunchbox.teamobsidianasterisk.repl.co">
+  <button onclick= >Em</button>
+  </a>
+
+   <a href="https://www.google.com/webhp?igu=1&safe=active&ssui=on">
+  <button onclick= >Google</button>
+  </a>
+    <a href="http://www.catb.org/jargon/html/index.html">
+      <button onclick= >Jargon</button>
+      </a>
+      <a href="https://noclip.website">
+  <button onclick= >No-clip</button>
+  </a>
+  <a href="https://website-2-music-demo.teamobsidianasterisk.repl.co">
+  <button onclick= >Music Demo</button>
+  </a>
+  <a href="https://ynoproject.net">
+  <button onclick= >YNOProject</button>
+  </a>
+  <a href="https://cryptograms.puzzlebaron.com/play.php">
+  <button onclick= >Aristocrat</button>
+  </a>
+  <a href="https://sonicresearch.org/clownacy/cave.html">
+  <button onclick= >Cave Story</button>
+  </a>
+  <a href="https://website.eyeofthecosmos.repl.co">
+  <button onclick= >EyeOfTheCosmos</button>
+  </a>
+
+  <a href="https://temp.teamobsidianasterisk.repl.co"><button>Temp</button></a>
+  <a href="https://obscuretaiko.glitch.me/"><button>Taiko</button></a>
+  <a href="https://red-mooschrom-github-io.vercel.app/"><button>Doodle</button></a>
+
+    </div>
+  <p id="testline">Paste your link into the above textbox and you will be redirected.</p>
+  <h1 id="longline">Current Message: Hello Danny, please enjoy the construction.</h1>
+
+
+    <div id="notepad" class="editable dropblue" contentEditable="true" onfocusout="saveNotepad()">    
+    </div>
+
+
+  </div>
+</div>
+
+  
+<div id="bgImg" class="bgtilescroll1">
+<!--  <div class="checkerboard"></div> -->
+</div>
+
+  
+  <div id="embedobject" class="dragOpen">
+      <!--<div id="handlebar" class="" ></div>-->
+      <!--<iframe id="embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ?auto" class="dragOpen window"></iframe> -->
+  </div> 
+
+
+
+<div id="crtLayer">
+  <!--<div class="scanline"></div>-->
+</div>
+  
+  <script src="script.js"></script>
+
+</body>
+
+</html>

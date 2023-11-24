@@ -1,0 +1,51 @@
+:root {
+  --color-primary: #303E8C;
+  --color-secondary: #3F61A6;
+/*p3p color pallete...
+https://color.adobe.com/Persona-3-Muted-color-theme-13529333/ */
+}
+
+.checkerboard { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100vh; 
+} 
+
+.checkerboard::before { 
+  content: ""; 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  background: repeating-linear-gradient( 
+          0deg, var(--color-primary) 0, var(--color-primary) 40px,  
+          var(--color-secondary) 40px, var(--color-secondary) 80px); 
+} 
+
+.checkerboard::after { 
+  content: ""; 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  background: repeating-linear-gradient( 
+      90deg, var(--color-primary) 0, var(--color-primary) 40px,  
+      var(--color-secondary) 40px, var(--color-secondary) 80px); 
+  mix-blend-mode:difference; 
+} 
+
+.bgtilescroll1 {
+  animation: bg-scrolling 1.92s infinite, textShadow 1.6s infinite ;
+  animation-timing-function: linear;
+}
+
+@keyframes bg-scrolling {
+  0% {
+    background-position: 58px 58px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 58px 58px;
+  }
+}

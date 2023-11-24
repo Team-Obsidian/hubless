@@ -1,0 +1,177 @@
+:root {
+  --view-min-width:960px;
+  --view-min-height:720px;
+  --padding-max-x:70vw;
+  /**--view-max-height:100vh; */
+
+  --border-max-width: 15vw;
+  
+  --mgContent-padding-x: 0;
+  --mgContent-padding-y: 10%;
+  
+/*  --bgImg-image: url("https://github.com/Team-Obsidian/website-2/blob/main/img/background/deltarunebattlebg.gif?raw=true"); */
+  --bgImg-image: url("/p3p-tile.png");
+
+  --bgImg-scroll-x: 58px;
+  --bgImg-scroll-y: 58px;
+  
+  --embed-window: 150px;
+
+  --font-body: Helvetica;
+    
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  margin: none;
+  width: 100%;
+}
+
+#embedobject {
+  width: var(--embed-window);
+  aspect-ratio: 1/1;
+  background-color: green;
+  z-index: 3;
+  position: absolute;
+/*  border: 10px black;
+  doesn't seem to work for some reason*/
+}
+
+#handlebar {
+  width: 100%;
+  height: 20%;
+  background-color: blue;
+  position: relative;
+  top: 0%;
+  left: 0%;
+
+}
+
+#embed {
+  width: 99%;
+  height: 80%;
+  position: absolute;
+  bottom: 0px;
+}
+
+#bgImg {
+  filter: invert(100%);
+  width: 100%;
+  height: 100%;
+  /*background-image: url("https://www.w3schools.com/css/img_5terre.jpg"); */
+  /*background-image: var(--bgImg-image);*/
+  background-image: url("https://github.com/Team-Obsidian/website-2/raw/main/img/background/bg6.png");
+  background-repeat: repeat;
+  background-clip: border-box;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+}
+
+#mgContent {
+  min-width: var(--view-width-min);
+  width: 70vw/*var(--view-max-width)*/;
+  min-height: var(--view-height-min);
+  height: 100vh;
+  padding: 5%/*var(--mgContent-padding-x) var(--mgContent-padding-y)*/;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-wrap: anywhere;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+/*  left: calc((100vw - var(--view-max-width)) / 2);
+  left: var(--padding-max-x); */
+  z-index: 1;
+/*  background-color: white; */
+  opacity: 0.7;
+}
+
+  #mgContent::-webkit-scrollbar {
+  display: none;
+}
+
+h1 {
+  text-wrap: wrap;
+}
+
+#userInput {
+  position: relative;
+  width: 70vw;
+  padding: 0;
+  height: 2em;
+}
+
+#userInput:focus {
+  background: url("https://github.com/Team-Obsidian/assets/raw/main/deltarunebattlebg.gif");
+  transition: height 1.5s, width 1s, font-size 1.5s, border-width 2s, color 1s;
+  height: 2em;
+  width: 100%;
+  border-width: 2px;
+  color:white;
+  font-family: var(--font-body);
+  font-size: 3em;
+}
+
+#borderL {
+/*  min-width: var(--view-width-min); */
+/*  width: calc((100vw - var(--view-max-width)) / 2); */
+  width: var(--border-max-width);
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  z-index: 2;
+  background-color: tan;
+  opacity: 0.9;
+}
+
+#borderR {
+/*  min-width: var(--view-width-min); */
+/*  width: calc((100vw - var(--view-max-width)) / 2); */
+  width: var(--border-max-width);
+  height: 100vh;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  z-index: 2;
+  background-color: turquoise;
+  opacity: 0.9;
+}
+
+.dragOpen.is-dragging{ 
+  filter: sepia(100%);
+  transition: filter 0.5s;
+} 
+
+
+.bgTileScroll {
+  animation: bg-scrolling-reverse 2s ease-out infinite /*, textShadow 1.6s infinite*/ ;
+
+}
+
+
+.bgtilescroll1 {
+  animation: bg-scrolling 1.92s infinite, textShadow 1.6s infinite ;
+  animation-timing-function: linear;
+}
+
+@keyframes bg-scrolling {
+  0% {
+    background-position: var(--bgImg-scroll-x) var(--bgImg-scroll-y);
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: var(--bgImg-scroll-x) var(--bgImg-scroll-y);
+  }
+}
+
+#testimagecontainer {
+  margin: auto;
+  width: 20%;
+}
