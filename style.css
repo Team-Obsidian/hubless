@@ -4,7 +4,7 @@
   --padding-max-x:70vw;
   /**--view-max-height:100vh; */
 
-  --border-max-width: 15vw;
+  --border-max-width: 10vw;
   
   --mgContent-padding-x: 0;
   --mgContent-padding-y: 10%;
@@ -104,6 +104,9 @@ h1 {
   width: 70vw;
   padding: 0;
   height: 2em;
+  transition: height 1.5s, width 1s, font-size 1.5s, border-width 2s, color 1s;
+  background: transparent;
+  font-family: var(--font-body);
 }
 
 #userInput:focus {
@@ -171,7 +174,21 @@ h1 {
   }
 }
 
-#testimagecontainer {
-  margin: auto;
-  width: 20%;
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  
+}
+
+.editable {
+    display:inline-block;
+    border: solid 1px #000;
+    min-height: 200px;
+    width: 100%;
+    color: #3F61A6;
+    text-shadow: yellow 2px 2px;
 }

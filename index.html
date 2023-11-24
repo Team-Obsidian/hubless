@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta id="metaid" charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
@@ -25,16 +25,16 @@
   <div id="borderB"></div>
 -->
 </div>
-  
+
 <div id="mgContent">
   <form autocomplete="off">
     <input type="text" onpaste="SiteRedirect()" id="userInput" 
-  onfocus="blureverything()" onfocusout="unblureverything()"/>
+  onfocus="" onfocusout="" class="center"/>
   </form>
 
-  <div id="testimagecontainer">  <img id="testimage" class="dropblue" src="https://github.com/Team-Obsidian/website-2/blob/main/img/icon/forestbunny.gif?raw=true"/></div>
-  
-  <div id="buttonfield" class="dropblue">
+  <img id="testimage" class="center" src="https://github.com/Team-Obsidian/website-2/blob/main/img/icon/forestbunny.gif?raw=true"  onclick="checkpassword2()"/>
+
+  <div id="buttonfield" class="center">
   <!--<button onclick="checkpassword()">Apply</button>-->
 
   <a href="https://lunchbox.teamobsidianasterisk.repl.co">
@@ -71,8 +71,8 @@
   <a href="https://red-mooschrom-github-io.vercel.app/"><button>Doodle</button></a>
 
     </div>
-  <p id="testline">Paste your link into the above textbox and you will be redirected.</p>
-  <h1 id="longline">Current Message: Hello Danny, please enjoy the construction.</h1>
+  <p id="testline" class="center">Paste your link into the above textbox and you will be redirected.</p>
+  <h1 id="longline" class="center">Current Message: Hello Danny, please enjoy the construction.</h1>
 
 
     <div id="notepad" class="editable dropblue" contentEditable="true" onfocusout="saveNotepad()">    
@@ -90,7 +90,7 @@
   
   <div id="embedobject" class="dragOpen">
       <!--<div id="handlebar" class="" ></div>-->
-      <!--<iframe id="embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ?auto" class="dragOpen window"></iframe> -->
+      <iframe id="embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ?auto" class="dragOpen window"></iframe>
   </div> 
 
 
