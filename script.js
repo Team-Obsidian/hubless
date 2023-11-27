@@ -38,12 +38,84 @@ $(document).ready(function() {
 
 
 
-  });
+    //fetch weather data
+
+  
+})
+  
+/*
+  const json = '{"result":true, "count":42}';
+  const obj = JSON.parse(json);
+
+  console.log(obj.count);
+
+  */
+
+  
 
 function windowelement() {
   document.getElementById('testline').innerHTML = window.parent.location + " a a a" + window.location.href;
 }
 
+var object=""
+
+function processWeather(response) {
+  console.log("processWeather - response is: " + response);
+  object = JSON.parse(response);
+  console.log("object is " + object);
+}
+
+let fiveDayForecast;
+
+function day5() {
+fetch('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/chicago?unitGroup=metric&key=2FAYV5LJVYK3NRCUGRPLLPPNW&contentType=json')
+    .then(response => response.json())
+    .then(data => {
+        fiveDayForecast = data.forecast;
+        console.log(fiveDayForecast);
+    });
+}
+  
+var jsonRaw="";
+
+async function fetchierWeather() {
+  let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/chicago?unitGroup=metric&key=2FAYV5LJVYK3NRCUGRPLLPPNW&contentType=json";
+  jsonRaw = await (await fetch(url).json());
+  console.log("fetchierWeather fetched.");
+  console.log(jsonRaw);
+}
+
+function fetchWeather() {
+fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/chicago?unitGroup=metric&key=2FAYV5LJVYK3NRCUGRPLLPPNW&contentType=json", {
+  method: 'GET', 
+  headers: {
+
+  },
+
+}).then(response => {
+  if (!response.ok) {
+    console.log("response not okay");
+    throw response; //check the http response code and if isn't ok then throw the response as an error
+  }
+
+  return response.json(); //parse the result as JSON
+
+}).then(response => {
+  //response now contains parsed JSON ready for use
+  console.log("data can be processed");
+  processWeather(response);
+
+}).catch((errorResponse) => {
+  if (errorResponse.text) { //additional error information
+    console.log("response ran into error");
+    errorResponse.text().then( errorMessage => {
+      //errorMessage now returns the response body which includes the full error message
+    })
+  } else {
+    //no additional error information 
+  } 
+});
+}
 /*
 postMessage(window.parent.location, "*")
 window.addEventListener(

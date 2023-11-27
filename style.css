@@ -29,11 +29,14 @@ html {
 }
 
 #embedobject {
-  width: var(--embed-window);
+/*  width: var(--embed-window);  */
+  width: var(--border-max-width);
   aspect-ratio: 1/1;
   background-color: green;
   z-index: 3;
   position: absolute;
+  bottom: 0;
+  left: 0;
 /*  border: 10px black;
   doesn't seem to work for some reason*/
 }
@@ -57,17 +60,51 @@ html {
 
 #bgImg {
   filter: invert(100%);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 101vh;
   /*background-image: url("https://www.w3schools.com/css/img_5terre.jpg"); */
   /*background-image: var(--bgImg-image);*/
   background-image: url("https://github.com/Team-Obsidian/website-2/raw/main/img/background/bg6.png");
   background-repeat: repeat;
-  background-clip: border-box;
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   z-index: -1;
+  margin: 0;
+}
+
+
+#fgContent {
+  min-width: var(--view-width-min);
+  width: 80vw/*var(--view-max-width)*/;
+  min-height: var(--view-height-min);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-wrap: anywhere;
+  position: absolute;
+  top: 0;
+  left: 10vw;
+/*  left: calc((100vw - var(--view-max-width)) / 2);
+  left: var(--padding-max-x); */
+  z-index: 2;
+  background-color: rgba(255,255,255,0.2); 
+  opacity: 1;
+  pointer-events: none;
+}
+
+#dtIcon {
+  width: var(--border-max-width);
+  aspect-ratio: 3/1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("/p3p-tile-32x32.png");
+  background-repeat: repeat;
+  opacity: 1;
+  pointer-events: auto;
+  background-position: center;
+  background-size: auto;
 }
 
 #mgContent {
@@ -75,7 +112,8 @@ html {
   width: 70vw/*var(--view-max-width)*/;
   min-height: var(--view-height-min);
   height: 100vh;
-  padding: 5%/*var(--mgContent-padding-x) var(--mgContent-padding-y)*/;
+  padding: 2% 5%/*var(--mgContent-padding-x) var(--mgContent-padding-y)*/;
+  
   overflow-x: hidden;
   overflow-y: scroll;
   overflow-wrap: anywhere;
@@ -91,7 +129,11 @@ html {
   opacity: 0.7;
 }
 
-  #mgContent::-webkit-scrollbar {
+#fgContent::-webkit-scrollbar {
+  display: none;
+}
+
+#mgContent::-webkit-scrollbar {
   display: none;
 }
 
@@ -125,8 +167,8 @@ h1 {
 /*  width: calc((100vw - var(--view-max-width)) / 2); */
   width: var(--border-max-width);
   height: 100vh;
-  position: absolute;
-  top: 0%;
+  position: fixed;
+  top: 0;
   left: 0;
   z-index: 2;
   background-color: tan;
@@ -138,9 +180,9 @@ h1 {
 /*  width: calc((100vw - var(--view-max-width)) / 2); */
   width: var(--border-max-width);
   height: 100vh;
-  position: absolute;
-  top: 0%;
-  right: 0%;
+  position: fixed;
+  top: 0;
+  right: 0;
   z-index: 2;
   background-color: turquoise;
   opacity: 0.9;
@@ -187,7 +229,8 @@ h1 {
 .editable {
     display:inline-block;
     border: solid 1px #000;
-    min-height: 200px;
+    height: 15em;
+    overflow-y: scroll;
     width: 100%;
     color: #3F61A6;
     text-shadow: yellow 2px 2px;
