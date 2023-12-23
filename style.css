@@ -11,14 +11,18 @@
   
 /*  --bgImg-image: url("https://github.com/Team-Obsidian/website-2/blob/main/img/background/deltarunebattlebg.gif?raw=true"); */
   --bgImg-image: url("/p3p-tile.png");
-
+  --bgImg-url: url("https://github.com/Team-Obsidian/website-2/raw/main/img/background/bg1.png");
   --bgImg-scroll-x: 58px;
   --bgImg-scroll-y: 58px;
   
   --embed-window: 150px;
 
-  --font-body: Helvetica;
-    
+  --font-body: 'Helvetica', sans-serif;
+  --font-color: #000;
+  
+  --dtIcon-width: calc(var(--border-max-width)*2);
+
+
 }
 
 html {
@@ -26,6 +30,10 @@ html {
   overflow: hidden;
   margin: none;
   width: 100%;
+}
+
+p {
+  color: var(--font-color);
 }
 
 #embedobject {
@@ -37,6 +45,19 @@ html {
   position: absolute;
   bottom: 0;
   left: 0;
+/*  border: 10px black;
+  doesn't seem to work for some reason*/
+}
+
+#clockobject {
+/*  width: var(--embed-window);  */
+  width: var(--border-max-width);
+  aspect-ratio: 1/1;
+  background-color: red;
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 /*  border: 10px black;
   doesn't seem to work for some reason*/
 }
@@ -59,12 +80,11 @@ html {
 }
 
 #bgImg {
-  filter: invert(100%);
   width: 100vw;
   height: 101vh;
   /*background-image: url("https://www.w3schools.com/css/img_5terre.jpg"); */
   /*background-image: var(--bgImg-image);*/
-  background-image: url("https://github.com/Team-Obsidian/website-2/raw/main/img/background/bg6.png");
+  background-image: var(--bgImg-url);
   background-repeat: repeat;
   position: absolute;
   top: 0;
@@ -76,7 +96,7 @@ html {
 
 #fgContent {
   min-width: var(--view-width-min);
-  width: 80vw/*var(--view-max-width)*/;
+  width: 100vw/*var(--view-max-width)*/;
   min-height: var(--view-height-min);
   height: 100vh;
   overflow-x: hidden;
@@ -84,19 +104,43 @@ html {
   overflow-wrap: anywhere;
   position: absolute;
   top: 0;
-  left: 10vw;
+  left: 0vw;
 /*  left: calc((100vw - var(--view-max-width)) / 2);
   left: var(--padding-max-x); */
   z-index: 2;
-  background-color: rgba(255,255,255,0.2); 
+  background-color: rgba(255,255,255,0.0); 
   opacity: 1;
   pointer-events: none;
 }
 
-#dtIcon {
-  width: var(--border-max-width);
-  aspect-ratio: 3/1;
+
+#fgFilter {
+  min-width: var(--view-width-min);
+  width: 100vw/*var(--view-max-width)*/;
+  min-height: var(--view-height-min);
+  height: 100vh;
+  overflow: hidden;
   position: absolute;
+  top: 0vw;
+  left: 0vw;
+/*  left: calc((100vw - var(--view-max-width)) / 2);
+  left: var(--padding-max-x); */
+  z-index: 4;
+  background-image: url(/concrete-tile.jpg);
+  background-repeat: repeat;
+  opacity: 0.2;
+  filter:contrast(100%) brightness(1.5);
+  animation: bg-scroll 30s linear infinite;
+  pointer-events: none;
+}
+
+#dtIcon {
+  animation: slideInR ease 2s, rotateVert ease 8s;
+  animation-delay: 0s, 2s;
+  width: var(--dtIcon-width);
+  aspect-ratio: 2/1;
+  position: absolute;
+  overflow: hidden;
   top: 0;
   right: 0;
   background-image: url("/p3p-tile-32x32.png");
@@ -107,6 +151,22 @@ html {
   background-size: auto;
 }
 
+#dtIconDate {
+  margin-top: 5%;
+  font-size: calc(var(--dtIcon-width)/6);
+}
+
+#dtIconWeek {
+  margin: 0;
+  font-size: calc(var(--dtIcon-width)/6);
+}
+
+#dtIconTime {
+
+}
+
+
+  
 #mgContent {
   min-width: var(--view-width-min);
   width: 70vw/*var(--view-max-width)*/;
@@ -126,7 +186,7 @@ html {
   left: var(--padding-max-x); */
   z-index: 1;
 /*  background-color: white; */
-  opacity: 0.7;
+  opacity: 1.0;
 }
 
 #fgContent::-webkit-scrollbar {
@@ -139,6 +199,7 @@ html {
 
 h1 {
   text-wrap: wrap;
+  color: var(--font-color);
 }
 
 #userInput {
@@ -160,6 +221,12 @@ h1 {
   color:white;
   font-family: var(--font-body);
   font-size: 3em;
+}
+
+#testimage {
+  width: var(--dtIcon-width);
+  max-width: 147px;
+  aspect-ratio: 147/159;
 }
 
 #borderL {
@@ -216,6 +283,12 @@ h1 {
   }
 }
 
+@keyframes bg-scroll {
+  100% {
+    background-position: 0 100%;
+  }
+}
+
 
 
 .center {
@@ -235,3 +308,90 @@ h1 {
     color: #3F61A6;
     text-shadow: yellow 2px 2px;
 }
+
+.halfScale{
+  color: white;
+  font-size: calc(var(--dtIcon-width)/8);
+  text-shadow: black 2px 2px;
+  font-family: var(--font-body);
+  margin: 0;
+  transition: transform 2s;
+}
+
+.halfScale:hover {
+  color: yellow;
+  animation: shadowWiggle 1s infinite;
+/*  transform:rotate3d(1, 2, 3,  2deg) rotateY(359deg); */
+}
+
+a:hover {
+  color: yellow;
+  animation: shadowWiggle 1s infinite;
+/*  transform:rotate3d(1, 2, 3,  2deg) rotateY(359deg); */
+}
+
+@keyframes shadowWiggle{
+  0% {text-shadow: black 2px 2px;}
+  50%{text-shadow: black 5px 3px;}
+  100%{text-shadow: black 2px 2px;}
+}
+
+.rotateVert {
+  animation: rotateVert 5s;
+}
+
+@keyframes rotateVert {
+  0% {transform: rotateX(0deg);}
+  25% {transform: rotateX(0deg);}
+  50%  {transform: rotateX(720deg);}
+  75% {transform: rotateX(720deg);}
+  100% {transform:  rotateX(720deg)}
+}
+
+
+@keyframes rotateHoriz {
+  0% {transform: rotateY(0deg);}
+  25% {transform: rotateY(0deg);}
+  50%  {transform: rotateY(720deg);}
+  75% {transform: rotateY(720deg);}
+  100% {transform:  rotateY(720deg)}
+}
+
+.fadeIn{
+  animation: fadeIn 1s;
+}
+
+/*dtIcon width used*/
+.slideInR{
+
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+    transform:  translate(0px,-25px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}
+
+@keyframes slideInR{
+  0% {
+    filter:blur(3px);
+    transform:  translate(var(--dtIcon-width), 0px)  ;
+  }
+  50% {
+    filter:blur(2px);
+  }
+  /*
+  51% {
+
+  } */
+  80% {
+    transform:translate(0px,0px);
+    filter:blur(0px);
+  }
+}
+
