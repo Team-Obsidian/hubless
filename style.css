@@ -138,7 +138,7 @@ p {
   animation: slideInR ease 2s, rotateVert ease 8s;
   animation-delay: 0s, 2s;
   width: var(--dtIcon-width);
-  aspect-ratio: 2/1;
+  aspect-ratio: 4/3;
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -149,6 +149,7 @@ p {
   pointer-events: auto;
   background-position: center;
   background-size: auto;
+  padding: auto;
 }
 
 #dtIconDate {
@@ -316,6 +317,7 @@ h1 {
   font-family: var(--font-body);
   margin: 0;
   transition: transform 2s;
+
 }
 
 .halfScale:hover {

@@ -338,7 +338,7 @@ function updateBG() {
   console.log("updateBG is running");
 if (bgChange == "true" || bgChange === true) {
   console.log("bgChange is " + typeof bgChange);
-  let stem = 'url(https://github.com/Team-Obsidian/website-2/raw/main/img/background/'
+  let stem = 'url(https://raw.githubusercontent.com/Team-Obsidian/website-2/main/img/background/'
   let r = document.querySelector(':root');
   if (0 <= presentTime && presentTime <= 5 ) {
     r.style.setProperty('--bgImg-url', stem + 'bg6.png)');
@@ -400,7 +400,7 @@ if (fontColorChange == "true" || fontColorChange === true) {
     console.log("--font-color is #000");
     }
   else if (15 <= presentTime && presentTime <= 17 ) {
-    r.style.setProperty('--font-color', '#000');
+    r.style.setProperty('--font-color', '#fff');
     console.log("--font-color is #000");
     }
   else if (18 <= presentTime && presentTime <= 23 ) {
