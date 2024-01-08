@@ -1,0 +1,18 @@
+<div class="content fadeIn" id="zstory">
+  <div id="randomBox">
+    <h1>random placeholder here</h1>
+  </div>
+  <input id="fileInput" placeholder="input file name here"></input>
+  <button onclick="loadText()" id="textbtn">Load Text</button>
+  <div id="textContainer"></div>
+</div>
+
+<script>
+
+  document.getElementById("fileInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      loadText();
+    }
+  })
+</script>

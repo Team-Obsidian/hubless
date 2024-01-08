@@ -8,132 +8,72 @@
   <link rel="icon" type="image/x-icon" href="favicon.jpeg">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="crt.css" rel="stylesheet" type="text/css" />
-  <link href="background-pattern.css" rel="stylesheet" type="text/css" />
+  <link href="zombieStory.css" rel="stylesheet" type="text/css" />
   <link href='https://fonts.googleapis.com/css?family=Noto Sans JP' rel='stylesheet'>
+  <link href='https://hubless.teamobsidianasterisk.repl.co/ms-gothic.ttf'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/eruda@3.0.0/eruda.min.js"></script>
   <script src="https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"></script>
-  <script>eruda.init();</script>
+  <script>//eruda.init();</script>
 </head>
 
 <body>
 
-<div id="borderContainer">
-  <div id="borderL"></div>
-  <div id="borderR"></div>
-<!--
+  <div id="borderContainer">
+    <div id="borderL">
+      <button id="" class="center" onclick="loadPage('mgContent')">Load Main Content</button>
+      <button id="" class="center" onclick="loadPage('zombieStory')">Load Zombie Story</button>
+      <button id="" class="center" onclick="loadPage('settings')">Load Settings</button>
+    </div>
+    <div id="borderR"></div>
+    <!--
   <div id="borderT"></div>
   <div id="borderB"></div>
 -->
-</div>
-
-<div id="fgContent" class="">
-  <div id="dtIcon"  class="">
-    <p id="dtIconDate"class="halfScale center">Date-test</p>
-    <p id="dtIconWeek"class="halfScale center">Date-test</p>
-    <!--<img src="/sun-test.png">-->
-    <p id="dtIconTime"class="halfScale timerSec center">Time-test</p>
-  </div>
-</div>
-
-<div id="fgFilter">
-</div>
-
-  
-<div id="mgContent" class="fadeIn">
-  <form autocomplete="off">
-    <input type="text" onpaste="SiteRedirect()" id="userInput" 
-  onfocus="" onfocusout="" class="center"/>
-  </form>
-
-  <img id="testimage" class="center" src="https://github.com/Team-Obsidian/website-2/blob/main/img/icon/forestbunny.gif?raw=true"  onclick="checkpassword2()"/>
-
-  <div id="buttonfield" class="center">
-  <!--<button onclick="checkpassword()">Apply</button>-->
-
-  
-  <button onclick= ><a href="https://lunchbox.teamobsidianasterisk.repl.co">Em</a></button>
-
-
-   <a href="https://www.google.com/webhp?igu=1&safe=active&ssui=on">
-  <button onclick= >Google</button>
-  </a>
-    <a href="http://www.catb.org/jargon/html/index.html">
-      <button onclick= >Jargon</button>
-      </a>
-      <a href="https://noclip.website">
-  <button onclick= >No-clip</button>
-  </a>
-  <a href="https://website-2-music-demo.teamobsidianasterisk.repl.co">
-  <button onclick= >Music Demo</button>
-  </a>
-  <a href="https://ynoproject.net">
-  <button onclick= >YNOProject</button>
-  </a>
-  <a href="https://cryptograms.puzzlebaron.com/play.php">
-  <button onclick= >Aristocrat</button>
-  </a>
-  <a href="https://sonicresearch.org/clownacy/cave.html">
-  <button onclick= >Cave Story</button>
-  </a>
-  <a href="https://website.eyeofthecosmos.repl.co">
-  <button onclick= >EyeOfTheCosmos</button>
-  </a>
-
-  <a href="https://temp.teamobsidianasterisk.repl.co"><button>Temp</button></a>
-  <a href="https://obscuretaiko.glitch.me/"><button>Taiko</button></a>
-  <a href="https://red-mooschrom-github-io.vercel.app/"><button>Doodle</button></a>
-
-    </div>
-  <p id="testline" class="center">Paste your link into the above textbox and click on the bunny to be redirected.</p>
-  <h1 id="longline" class="center">Current Message: Nothing Today. Just enjoy yourself.</h1>
-  <button class="center" onclick="loadTime()">Load Time System</button>
-  <button class="center" onclick="updateBG()">Update Background(needs timePass)</button>
-  <button class="center" onclick="updateFontColor()">Update font color</button>
-  <button class="center" onclick="checkImpVar()">Check Important Variables</button>
-  <button class="center" onclick="localStorage.clear()">Reset localStorage</button>
-  <p class="center">click the stuff below to toggle the variables</p>
-  <div id="buttonfield2">
-  <button class="" onclick="toggle('timePass')">{timePass}</button>
-  <button class="" onclick="toggle('bgChange')">{bgChange}</button>
-  <button class="" onclick="toggle('fontColorChange')">{fontColorChange}</button>
   </div>
 
-    <div id="notepad" class="editable dropblue" contentEditable="true" onfocusout="saveNotepad()">    
+  <div id="fgContent" class="">
+    <div id="dtIcon" class="">
+      <p id="dtIconDate" class="halfScale center">Date-test</p>
+      <p id="dtIconWeek" class="halfScale center">Date-test</p>
+      <!--<img src="/sun-test.png">-->
+      <p id="dtIconTime" class="halfScale timerSec center">Time-test</p>
     </div>
+  </div>
 
-  <!--
-    <div id="varCont">
-      <p id="vtimePass"></p>
-      <p id="vbgChange"></p>
-    </div>
--->
+  <div id="fgFilter">
+  </div>
+
+
+
+
+  <div id="mgContentContainer">
 
   </div>
-</div>
 
-  
-<div id="bgImg" class="bgtilescroll1">
-<!--  <div class="checkerboard"></div> -->
-</div>
 
-  
+
+  <div id="bgImg" class="bgtilescroll1">
+    <!--  <div class="checkerboard"></div> -->
+  </div>
+
+
   <div id="embedobject" class="dragOpen">
-      <!--<div id="handlebar" class="" ></div>-->
-     <!-- <iframe id="embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ?auto" class="dragOpen window"></iframe> -->
-  </div> 
+    <!--<div id="handlebar" class="" ></div>-->
+    <!-- <iframe id="embed" src="https://www.youtube.com/embed/dQw4w9WgXcQ?auto" class="dragOpen window"></iframe> -->
+  </div>
   <div id="clockobject" class="drag2Open">
-    
-  </div> 
+
+  </div>
 
 
 
-<div id="crtLayer">
-  <!--<div class="scanline"></div>-->
-</div>
-  
+  <div id="crtLayer">
+    <!--<div class="scanline"></div>-->
+  </div>
+
   <script src="script.js"></script>
 
 </body>

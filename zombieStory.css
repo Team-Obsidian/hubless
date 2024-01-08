@@ -1,0 +1,44 @@
+#zstory .blue {
+  color: blue;
+}
+
+#zstory .red {
+  color: red;
+}
+
+#zstory .bloodyred {
+  color: #532218;
+}
+
+#zstory .lightkiwi {
+  color: #8FEB86;
+}
+
+#zstory .graybtn {
+  background-color: gray
+}
+
+#zstory a {
+  text-decoration: none !important;
+  color: purple;
+}
+
+#zstory a:hover {
+  color: #f48acd;
+  animation: MovingShadow 10s;
+}
+
+
+@keyframes MovingShadow {
+  0% {
+    text-shadow: black 2px 2px;
+  }
+
+  50% {
+    text-shadow: black 15px 9px;
+  }
+
+  100% {
+    text-shadow: black 2px 2px;
+  }
+}

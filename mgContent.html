@@ -1,0 +1,77 @@
+<div id="mgContent" class="fadeIn">
+  <form autocomplete="off">
+    <input type="text" onpaste="SiteRedirect()" id="userInput" onfocus="" onfocusout="" class="center" />
+  </form>
+
+  <img id="testimage" class="center"
+    src="https://github.com/Team-Obsidian/website-2/blob/main/img/icon/forestbunny.gif?raw=true"
+    onclick="checkpassword2()" />
+
+  <div id="buttonfield" class="center">
+    <!--<button onclick="checkpassword()">Apply</button>-->
+
+
+    <button onclick=><a href="https://lunchbox.teamobsidianasterisk.repl.co">Em</a></button>
+
+
+    <a href="https://www.google.com/webhp?igu=1&safe=active&ssui=on">
+      <button onclick=>Google</button>
+    </a>
+    <a href="http://www.catb.org/jargon/html/index.html">
+      <button onclick=>Jargon</button>
+    </a>
+    <a href="https://noclip.website">
+      <button onclick=>No-clip</button>
+    </a>
+    <a href="https://website-2-music-demo.teamobsidianasterisk.repl.co">
+      <button onclick=>Music Demo</button>
+    </a>
+    <a href="https://ynoproject.net">
+      <button onclick=>YNOProject</button>
+    </a>
+    <a href="https://cryptograms.puzzlebaron.com/play.php">
+      <button onclick=>Aristocrat</button>
+    </a>
+    <a href="https://sonicresearch.org/clownacy/cave.html">
+      <button onclick=>Cave Story</button>
+    </a>
+    <a href="https://website.eyeofthecosmos.repl.co">
+      <button onclick=>EyeOfTheCosmos</button>
+    </a>
+
+    <a href="https://temp.teamobsidianasterisk.repl.co"><button>Temp</button></a>
+    <a href="https://obscuretaiko.glitch.me/"><button>Taiko</button></a>
+    <a href="https://red-mooschrom-github-io.vercel.app/"><button>Doodle</button></a>
+
+  </div>
+  <p id="testline" class="center">Paste your link into the above textbox and click on the bunny to be redirected.</p>
+  <h1 id="longline" class="center">Current Message: Nothing Today. Just enjoy yourself.</h1>
+
+  <div id="notepad" class="editable dropblue" contentEditable="true" onfocusout="saveNotepad()">
+  </div>
+
+  <!--
+    <div id="varCont">
+      <p id="vtimePass"></p>
+      <p id="vbgChange"></p>
+    </div>
+-->
+
+
+
+
+  <script>
+    $(document).ready(function () {
+      if (localStorage.getItem("notepad") != null) {
+
+        document.getElementById("notepad").innerHTML = localStorage.getItem("notepad");
+      }
+
+    });
+
+
+
+
+
+  </script>
+</div>
